@@ -21,4 +21,3 @@
 
 - name: setting RVM autolibs on
   command: "{{rvm.root}}/bin/rvm autolibs 3"
-  sudo: "{{ sudo }}"
