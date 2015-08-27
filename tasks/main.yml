@@ -2,10 +2,11 @@
 - include: ./install_packages.yml
 
 - name: checking that RVM is installed
+  sudo: {{ rvm.sudo }}
   file:
     path: "{{rvm.init_script}}"
     state: file
-  ignore_errors: True
+  ignore_errors: true
   register: rvm_install_result
 
 - include: ./install_rvm.yml
