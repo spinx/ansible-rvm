@@ -2,27 +2,27 @@
 - include: ./receive_key.yml
 
 - name: downloading RVM installer
-  sudo: {{ rvm.sudo }}
+  sudo: rvm.sudo
   get_url:
     url: "{{rvm.url}}"
     dest: "{{rvm.temp_installer_path}}"
 
 - name: set executable RVM installer
-  sudo: {{ rvm.sudo }}
+  sudo: rvm.sudo
   file:
     path: "{{rvm.temp_installer_path}}"
     mode: 0755
 
 - name: installing RVM
-  sudo: {{ rvm.sudo }}
+  sudo: rvm.sudo
   command: "{{rvm.temp_installer_path}} --path {{rvm.root}} stable"
 
 - name: removing RVM installer
-  sudo: {{ rvm.sudo }}
+  sudo: rvm.sudo
   file:
     path: "{{rvm.temp_installer_path}}"
     state: absent
 
 - name: setting RVM autolibs on
-  sudo: {{ rvm.sudo }}
+  sudo: rvm.sudo
   command: "{{rvm.root}}/bin/rvm autolibs 3"

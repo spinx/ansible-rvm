@@ -1,3 +1,4 @@
 ---
 - name: receiving key
+  sudo: rvm.sudo
   shell: "gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"

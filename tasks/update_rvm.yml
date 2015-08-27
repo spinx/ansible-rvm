@@ -2,5 +2,5 @@
 - include: ./receive_key.yml
 
 - name: updating RVM
-  sudo: {{ rvm.sudo }}
+  sudo: rvm.sudo
   shell: "source {{rvm.init_script}} && rvm get stable executable=/bin/bash"
