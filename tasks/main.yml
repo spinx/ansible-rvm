@@ -2,7 +2,7 @@
 - include: ./install_packages.yml
 
 - name: checking that RVM is installed
-  sudo: rvm.sudo
+  become_user: "{{rvm.become_user}}"
   file:
     path: "{{rvm.init_script}}"
     state: file
