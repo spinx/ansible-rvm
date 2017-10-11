@@ -1,4 +1,4 @@
 ---
 - name: receiving key
-  sudo: rvm.sudo
+  become_user: "{{rvm.become_user}}"
   shell: "gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
